@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+      background-image: url("gift.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+
+.gift{
+      float:left;
+      position: absolute;
+      left: 7%;
+      top:49%;
+      height: 10vw;
+      width: 10vw;
+      display: none;
+    }
+.santa{
+      position:absolute;
+      left:2%;
+      top:35%;
+      height: 100px;
+      width: 200px;
+    }
+.giftp
+{
+  float:left;
+  position:absolute;
+  left: 4%;
+  top:70%;
+  font-size: 3vw;
+}
+.giftp:hover
+{
+  color:rgb(0,0,130);
+  text-decoration: underline;
+}
+.red/*#pass_ver*/{
+  color: red;
+  font-size:12px;
+  display:none;
+}
+#calc
+{
+  background-color:powderblue;
+  padding: 5px 0px;
+  margin: 0px;
+  text-align: center;
+  display:inline-block;
+  width:15%;
+}
+#arrow{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  position: fixed;
+  bottom:20px;
+  left:29%;
+  display: none;
+}
+input[type=text],input[type=password],input[type=tel], select, input[type=number],input[type=date],textarea 
+{
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+.fa-refresh
+{
+	color: blue;
+}
+#captcha{
+  width:60%;
+  margin: 0px;
+}
+label 
+{
+  padding: 5px 0px 12px 0;
+  display: inline-block;
+}
+.required
+{
+  color: red;
+  font-size: 18px;
+}
+/*colors:blueviolet,darkviolet,darkorchid,cyan,#39ff14;#bd3bfd*/
+input[type=submit] 
+{
+  background-color:#c654fe;
+  color: white;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color:darkorchid;
+}
+.head{
+  position: absolute;
+  float: right;
+  font-size:5vw;
+  color: white;
+  text-shadow: 5px 5px 5px #000000;
+  top:3%;
+  right: 21%;
+  display: none;
+}
+.container {
+  border-radius:1.5vw;
+  background-color:floralwhite;
+  width:50%;
+  float:right;
+  padding:2.5vw 3vw;
+  margin: 5vw;
+  box-shadow: 0.5vw 0.5vw orange;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit],#pass_ver {
+    width: 100%;
+    margin-top:0px;
+  }
+}

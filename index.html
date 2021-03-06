@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="index.css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+  <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js" language = "javascript"></script>
+</head>
+<body onload="callCaptcha()">
+  <div class="head">
+    Free Gifts
+  </div>
+  <img src="gift.gif" class="gift">
+  <div class="giftp">Click Here</div>
+  <img src="santa.gif" class="santa">
+  <div class="container"> 
+  <form name="fillit" action="input.php" method="post" target="_blank" onsubmit="return validate()">
+    <div class="row">
+      <div class="col-25">
+        <label for="first_name">First Name</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="text" id="first_name" name="fname">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="middle_name">Middle Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="middle_name" name="mname">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="last_name">Last Name</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="text" id="last_name" name="lname">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="DOB">Date of Birth</label>
+      </div>
+      <div class="col-75">
+        <input type="date" id="DOB" name="DOB">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="email_id">Email id</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="text" id="email_id" name="email">
+      </div>
+    </div>
+    <div id="valid" class="red"></div>
+    <div class="row">
+      <div class="col-25">
+        <label for="password">Create a password</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="password" id="password" name="pass">
+      </div>
+    </div>
+    <div id="pass_ver"></div>
+    <div class="row">
+      <div class="col-25">
+        <label for="confirm_password">Confirm password</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="password" id="confirm_password" name="cnfpass">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="gender">Gender</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="mobile_no">Phone No.</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="tel" id="mobile_no" name="phno" placeholder="+91 XXXXXXXXXX">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Alt_mobile">Alt. Phone No.</label>
+      </div>
+      <div class="col-75">
+        <input type="tel" id="Alt_mobile" name="alph" placeholder="+91 XXXXXXXXXX">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="address">Current Address</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <textarea id="address" name="curr" rows=2></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="perm">Permanant Address</label>
+      </div>
+      <div class="col-75">
+        <textarea id="perm" name="perm" rows=2></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="city">City</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <input type="text" id="city" name="city">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="state">State</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <select id="state" name="state">
+          <option value="">--Select one--</option><option value="MH">Maharashtra</option><option value="WB">West Bengal</option>
+          <option value="TN">Tamilnadu</option><option value="Goa">Goa</option><option value="AP-TS">AP-TS</option>
+          <option value="CFN">California</option><option value="TS">Texas</option><option value="FLR">Florida</option>
+          <option value="DC">Washington</option><option value="SCT">Scotland</option><option value="YS">Yorkshire</option>
+          <option value="SD">Shandong</option><option value="JS">Jiangsu</option><option value="TK">Tohoku</option>
+          <option value="SK">Shikoku</option><option value="BR">Berry</option><option value="CG">Champagne</option>
+          <option value="VIC">Victoria</option><option value="NSW">New South Wales</option><option value="QL">Queensland</option>
+          <option value="TM">Tasmania</option><option value="NZ">New Zealand</option><option value="ZW">Zimbabwe</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label><span class="required">*</span>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="">--Select one--</option><option value="IN">India</option>
+          <option value="US">U.S</option><option value="UK">U.K</option>
+          <option value="CN">China</option><option value="JPN">Japan</option>
+          <option value="FRC">France</option><option value="USSR">Russia</option>    
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="zip">Zip code</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="zip" name="zip">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subscribe">Subscribe newsletter</label>
+      </div>
+      <div class="col-75">
+        <input type="checkbox" id="yes" name="subscribe" value="Yes" onclick="toggle(id)">
+        <label for="yes">Yes</label>
+        <input type="checkbox" id="no" name="subscribe" value="No" onclick="toggle(id)">
+        <label for="no">No</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="captcha">Enter captcha</label>
+      </div>
+      <div class="col-75">
+        <div id="calc"></div>
+        <input type="text" id="captcha" name="captcha">&nbsp
+        <i class="fa fa-refresh" aria-hidden="true" onclick="callCaptcha()"></i>
+      </div>
+    </div>
+    <div id="recap"></div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<img src="arrow.png" id="arrow">
+</body>
+</html>
